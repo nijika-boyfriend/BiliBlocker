@@ -6,6 +6,15 @@ LSPosed/Xposed module: Adds a "Block" button to the main comments in Bilibili co
 
 ## 说明
 
-只适配了8.93.0版本，安装包在/apk里
+目前仅适配 **B 站 8.93.0** 版本。
 
-Only compatible with version 8.93.0, the installation package is in /apk.
+### 下载
+
+您可以前往 [Releases 页面](https://github.com/nijika-boyfriend/BiliBlocker/releases/tag/v1.0.0) 下载：
+
+1.  **BiliBlocker.apk**: 本模块的安装包。
+2.  **tv.danmaku.bili_8.93.0_apkmirror.com.apkm**: 匹配的 B 站客户端安装包。
+
+---
+
+## 功能特性
