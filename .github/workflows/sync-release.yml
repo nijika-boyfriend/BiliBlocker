@@ -1,0 +1,53 @@
+name: Sync Release to yuki.biliblocker
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-and-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'gradle'
+
+      - name: Generate Debug Keystore
+        run: |
+          keytool -genkey -v -keystore /tmp/debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build with Gradle
+        run: ./gradlew assembleRelease
+
+      - name: Verify APK
+        run: |
+          if [ -f "BiliBlocker.apk" ]; then
+            echo "APK generated successfully at root"
+            ls -la BiliBlocker.apk
+          else
+            echo "APK not found at root, looking in build output"
+            ls -la app/build/outputs/apk/release/
+            cp app/build/outputs/apk/release/*.apk ./BiliBlocker.apk
+          fi
+
+      - name: Create Release in yuki.biliblocker
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.SYNC_PAT }}
+          repo: yuki.biliblocker
+          owner: nijika-boyfriend
+          artifacts: "BiliBlocker.apk"
+          tag: ${{ github.event.release.tag_name }}
+          name: ${{ github.event.release.name }}
+          body: ${{ github.event.release.body }}
+          draft: false
+          prerelease: false
