@@ -1,4 +1,4 @@
-package com.example.biliblocker;
+package yuki.biliblocker;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -166,7 +166,7 @@ public final class ModuleLog {
                     "100",
                     "-f",
                     logFile.getAbsolutePath()
-            });
+                    });
             sLogCaptureStarted = true;
             i("log capture started -> " + logFile.getAbsolutePath(), true);
         } catch (Throwable t) {

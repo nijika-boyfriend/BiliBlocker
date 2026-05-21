@@ -1,4 +1,4 @@
-package com.example.biliblocker;
+package yuki.biliblocker;
 
 import android.content.Context;
 import android.database.Cursor;

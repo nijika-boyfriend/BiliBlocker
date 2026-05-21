@@ -3,15 +3,15 @@ plugins {
 }
 
 android {
-    namespace = "com.example.biliblocker"
+    namespace = "yuki.biliblocker"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.biliblocker"
+        applicationId = "yuki.biliblocker"
         minSdk = 21
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.1.0"
     }
 
     signingConfigs {
