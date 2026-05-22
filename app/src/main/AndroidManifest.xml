@@ -3,6 +3,7 @@
 
     <application
         android:label="BiliBlocker"
+        android:icon="@drawable/ic_launcher"
         android:hasCode="true">
 
         <meta-data
