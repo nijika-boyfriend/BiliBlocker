@@ -1,8 +1,8 @@
 # BiliBlocker
 
-LSPosed/Xposed 模块：为 B 站 `tv.danmaku.bili` 评论区主评论添加「拉黑」按钮，点击后直接拉黑评论作者。
+LSPosed/Xposed 模块：为 B 站 `tv.danmaku.bili` 评论区和播放页添加「拉黑」按钮，点击后直接拉黑作者。
 
-LSPosed/Xposed module: Adds a "Block" button to the main comments in Bilibili comment section, which directly blocks the comment author when clicked.
+LSPosed/Xposed module: Adds a "Block" button to the comment section and playback page of Bilibili `tv.danmaku.bili`, allowing you to block the author directly with one click.
 
 ## 说明
 
