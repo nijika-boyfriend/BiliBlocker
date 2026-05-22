@@ -28,6 +28,7 @@ public class MainHook implements IXposedHookLoadPackage {
         forceLog("loadPackage process=" + lpparam.processName);
         CommentHook.init(lpparam);
         hookAlwaysOnLog(lpparam);
+        VideoDetailsHook.init(lpparam);
         // hookStartupToast disabled per user request
     }
 
